@@ -5,7 +5,7 @@ set -u
 : "${CONTAINER_REGISTRY:=bookandinventory.azurecr.io}"
 : "${VERSION:=latest}"
 : "${REGISTRY_UN:=bookandinventory}"
-: "${REGISTRY_PW:=arMKHThcE2RaiJc+LiSCDxw3iRwX5Ks6CFWXH0CWai+ACRDRPO3K}"
+: "${REGISTRY_PW:=redacted"
 
 set -e
 
