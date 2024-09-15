@@ -1,1 +1,29 @@
-# Your Solution
+services:
+
+  book:
+    image: book
+    build:
+      context: ./book_catalog
+      dockerfile: Dockerfile
+    container_name: book
+    ports:
+      - "8080:8080"
+    environment:
+      - PORT=8080
+      - DATABASE_URL=postgresql://part4:byJ2Lfp1u2icQfl8voFQSiuWCRixwcmz@dpg-crjao3m8ii6s73fe56q0-a.oregon-postgres.render.com/part4_5g49
+      - APP_NAME=book
+    restart: "no"
+
+  inventory:
+    image: inventory
+    build:
+      context: ./inventory_management
+      dockerfile: Dockerfile
+    container_name: inventory
+    ports:
+      - "8090:8090"
+    environment:
+      - PORT=8090
+      - DATABASE_URL=postgresql://part4:byJ2Lfp1u2icQfl8voFQSiuWCRixwcmz@dpg-crjao3m8ii6s73fe56q0-a.oregon-postgres.render.com/part4_5g49
+      - APP_NAME=inventory
+    restart: "no"
